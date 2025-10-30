@@ -18,6 +18,9 @@ config.server.enhanceMiddleware = (middleware) => {
     };
 };
 
+// Add drizzle orm support
+config.resolver.sourceExts.push("sql");
+
 // ######################################################################
 
 module.exports = config;
