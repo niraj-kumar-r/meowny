@@ -1,16 +1,16 @@
 import { DARK_THEME, LIGHT_THEME } from "@/constants/theme";
-import { useMaterial3Theme } from "@pchmn/expo-material3-theme";
 import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import { useMemo } from "react";
 import { useColorScheme } from "react-native";
 import { MD3DarkTheme, MD3LightTheme, PaperProvider } from "react-native-paper";
 
 export default function RootLayout() {
     const colorScheme = useColorScheme();
-    const { theme } = useMaterial3Theme();
 
     // ENABLE THEME OVERRIDE WITH MATERIAL3 THEME COLORS
 
+    // const { theme } = useMaterial3Theme();
     // const paperTheme = useMemo(
     //     () =>
     //         colorScheme === "dark"
@@ -29,7 +29,11 @@ export default function RootLayout() {
 
     return (
         <PaperProvider theme={paperTheme}>
-            <Stack />
+            <Stack>
+                <Stack.Screen name="index" />
+                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            </Stack>
+            <StatusBar style="auto" />
         </PaperProvider>
     );
 }
