@@ -1,4 +1,5 @@
 import { Text, View } from "react-native";
+import { Button } from "react-native-paper";
 
 export default function Index() {
   return (
@@ -10,6 +11,7 @@ export default function Index() {
       }}
     >
       <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Button>Click Me</Button>
     </View>
   );
 }
